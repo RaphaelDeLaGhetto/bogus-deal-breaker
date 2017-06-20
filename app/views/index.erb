@@ -1,0 +1,14 @@
+<% @posts.each do |post| %>
+  <article>
+      <header>
+          <img src="<%= post[:image] %>">
+      </header>
+      <section>
+          <%= post[:description] %>
+      </section>
+      <footer>
+         <div class="hot">Hot find!</div>
+         <time><%= post[:created_at] %></time> 
+      </footer>
+  </article>
+<% end %>
