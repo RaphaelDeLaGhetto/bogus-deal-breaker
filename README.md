@@ -1,11 +1,12 @@
-# c9-sinatra-setup
 
-_Hello, world!_ Sinatra app for quick classroom demos on Cloud9
+# bogus-deal-breaker
+
+Spot the real deals at the grocery store
 
 # Clone this repository into a new workspace
 
 ```
-https://github.com/RaphaelDeLaGhetto/c9-sinatra-setup.git
+https://github.com/RaphaelDeLaGhetto/bogus-deal-breaker.git
 ```
 
 # Install dependencies
@@ -17,7 +18,7 @@ gem install bundler
 bundle install
 ```
 
-# Install the Sinatra runner
+# Install the Sinatra runner (for c9.io)
 
 In `bash`:
 
