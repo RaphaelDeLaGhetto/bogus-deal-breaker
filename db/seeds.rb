@@ -1,19 +1,20 @@
-users = [
-    { username: "sharky_j", avatar_url: "http://naserca.com/images/sharky_j.jpg" },
-    { username: "kirk_whalum", avatar_url: "http://naserca.com/images/kirk_whalum.jpg" },
-    { username: "marlin_peppa", avatar_url: "http://naserca.com/images/marlin_peppa.jpg" }
-]
+bananas = {
+  description: "$0.55 for #bananas at #Co-op",
+  image: "http://nooga.com/assets/49173afcceda4c4327c23cd99fdb6a6839856.JPG",
+}
 
-users.each do |user|
-  User.create(user)
-end
+raisin_bran = {
+  description: "$3.23 for 567g #RaisinBran at #Walmart",
+  image: "http://s3.amazonaws.com/bncore/wp-content/uploads/2014/07/381351.jpg",
+}
 
-posts = [
-    { photo_url: "http://naserca.com/images/shark.jpg", user_id: User.find_by({username: 'sharky_j'}).id},
-    { photo_url: "http://naserca.com/images/whale.jpg", user_id: User.find_by({username: 'kirk_whalum'}).id },
-    { photo_url: "http://naserca.com/images/marlin.jpg", user_id: User.find_by({username: 'marlin_peppa'}).id }
-]
+yogurt = {
+  description: "10x500ml #chobani #yogurts for $10 at #Sobeys",
+  image: "https://www.referralcandy.com/wp-content/uploads/2016/04/chobani-in-stores.jpg",
+}
 
-posts.each do |post|
-  Post.create(post)
+@posts = [bananas, raisin_bran, yogurt] 
+ 
+@posts.each do |post|
+    Post.create(post)
 end
