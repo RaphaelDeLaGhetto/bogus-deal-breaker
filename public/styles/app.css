@@ -69,3 +69,62 @@ nav a:hover {
         text-align: center;
     }
 }
+
+
+button,
+button[type="submit"] {
+    padding: 0.5em;
+    color: #FFF;
+    background: #1abc9c;
+    font-size: 1em;
+    text-align: center;
+    font-style: normal;
+    width: 100%;
+    border: 1px solid #16a085;
+    border-width: 1px 1px 3px;
+    border-radius: 5px;
+}
+
+section {
+    color: #4f4f4f;
+    font-size: 1.5em;
+    font-family: sans-serif;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+@media (min-width: 900px) {
+    section {
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+}
+
+
+
+input {
+  font-size: 1.1em;
+}
+
+input,
+form-group {
+  display: block;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+form {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+
+section h1 {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+main {
+  width: 100%;
+}
