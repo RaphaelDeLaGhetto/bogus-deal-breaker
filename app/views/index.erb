@@ -1,5 +1,10 @@
 <section>
-  <a href="/new"><button>Post New Deal</button></a>
+  <% if logged_in? %>
+    <a href="/new"><button>Post New Deal</button></a>
+  <% else %>
+    <a href="/login"><button>Login</button></a>
+  <% end %>
+  
 </section>
 
 <% @posts.each do |post| %>

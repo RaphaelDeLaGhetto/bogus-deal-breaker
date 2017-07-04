@@ -128,3 +128,8 @@ section h1 {
 main {
   width: 100%;
 }
+
+#logout {
+  width: 100%;
+  text-align: right;
+}
