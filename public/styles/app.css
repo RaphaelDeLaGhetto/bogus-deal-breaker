@@ -133,3 +133,10 @@ main {
   width: 100%;
   text-align: right;
 }
+
+/* W5D2 */
+button.delete {
+  border: 1px solid #e50000;
+  background-color: #ff0000;
+  width: 100%;
+}

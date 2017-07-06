@@ -1,0 +1,14 @@
+<article>
+  <header>
+    <a href="/post/<%= post.id %>">
+      <img src="<%= post[:image] %>">
+    </a>
+  </header>
+  <section>
+    <%= post[:description] %>
+  </section>
+  <footer>
+    <div class="hot"><%= post.get_freshness %></div>
+    <time><%= post[:created_at] %></time> 
+  </footer>
+</article>

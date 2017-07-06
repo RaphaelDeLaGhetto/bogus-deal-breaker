@@ -1,0 +1,26 @@
+<section>
+  <h1>Update post description</h1>
+  <div class="submit-form">
+    <ul class="errors">
+      <% @post.errors.full_messages.each do |msg| %>
+         <li><%= msg %></li>
+      <% end %>
+    </ul>
+    <form action="/post/<%= @post.id %>" enctype="multipart/form-data" method="post">
+      <input type="hidden" name="_method" value="PATCH">
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <input type="text" name="description" value="<%= @post.description %>">
+      </div>
+      <div class="form-group">
+        <button type="submit">Update</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<article>
+  <header>
+    <img src="<%= @post[:image] %>">
+  </header>
+</article>
