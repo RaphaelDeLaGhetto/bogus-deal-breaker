@@ -140,3 +140,16 @@ button.delete {
   background-color: #ff0000;
   width: 100%;
 }
+
+#error-pic {
+  background-image: url(http://www.tourismsaskatchewan.com/~/media/about-saskatchewan/rcmp.jpg?w=1024&hash=9771F69CA6C0404C94CE1A5740E784EBB5388069); 
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 750px) {
+   #error-pic {
+       background-image: url(http://i.cbc.ca/1.1700997.1392758731!/httpImage/image.jpg_gen/derivatives/16x9_620/rcmp.jpg);
+   } 
+}

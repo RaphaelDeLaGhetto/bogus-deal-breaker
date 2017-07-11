@@ -3,16 +3,20 @@
   <header>
     <h1>Posted by <%= @post.user.name %></h1>
   </header>
-  <p>
-    <a href="/post/<%= @post.id %>/edit"><button>Edit</button></a>
-  </p>
+  <% if @post.user == current_user %>
+    <p>
+      <a href="/post/<%= @post.id %>/edit"><button>Edit</button></a>
+    </p>
+  <% end %>
 </section>
 <%= erb(:_post, { locals: {post: @post} } ) %>
-<section>
-  <p>
-    <form action="/post/<%=@post.id%>" method="post">
-      <input type="hidden" name="_method" value="DELETE">
-      <button type="submit" class="delete" onclick="return confirm('Are you sure you want to delete this deal?')">Delete Post?</button>
-    </form>
-  </p>
-</section>
+<% if @post.user == current_user %>
+  <section>
+    <p>
+      <form action="/post/<%=@post.id%>" method="post">
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit" class="delete" onclick="return confirm('Are you sure you want to delete this deal?')">Delete Post?</button>
+      </form>
+    </p>
+  </section>
+<% end %>

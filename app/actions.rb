@@ -2,6 +2,18 @@ helpers do
   def logged_in?
     !session[:user_id].nil?       
   end
+  
+  def current_user
+    if logged_in?
+      User.find(session[:user_id])
+    end
+  end
+end
+
+['/new', '/post/:id/edit'].each do |path|
+  before path do
+    redirect '/login' if !logged_in?
+  end
 end
 
 #
@@ -59,7 +71,12 @@ end
 #
 get '/post/:id/edit' do
   @post = Post.find(params[:id])
-  erb :edit
+  if @post.user == current_user 
+    erb :edit
+  else
+    @ip = request.ip
+    halt(401, erb(:error_401))
+  end
 end
 
 #
@@ -79,8 +96,16 @@ end
 # DELETE /post/:id
 #
 delete '/post/:id' do
-  Post.delete(params[:id])
-  redirect('/')
+ 
+  #if params[:id] == session[:user_id]
+  @post = Post.find(params[:id])
+  if @post.user == current_user
+    Post.delete(params[:id])
+    redirect('/')
+  else
+    @ip = request.ip
+    halt(401, erb(:error_401))
+  end
 end
 
 
